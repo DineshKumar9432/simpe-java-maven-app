@@ -30,7 +30,7 @@ pipeline {
     
     stage('Deploy to tomcat') {
       steps {
-           sh 'sudo scp -i demo.pem -o "StrictHostKeyChecking=no" webapp/target/webapp.war ubuntu@3.110.204.42:/home/ubuntu/'
+           sh 'sudo scp -i demo.pem -o "StrictHostKeyChecking=no" webapp/target/webapp.war ubuntu@3.110.204.42:/home/ubuntu'
 //            sh 'sudo ansible-playbook deploy-new.yml'
     }
     }
