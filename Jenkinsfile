@@ -29,10 +29,10 @@ pipeline {
     }
     
 //    stage('Deploy to tomcat') {
-//     steps {
-//           sh 'sudo scp -i demo.pem -o "StrictHostKeyChecking=no" webapp/target/webapp.war ubuntu@13.235.245.174:/home/ubuntu/'
-//       sh 'sudo ansible-playbook deploy-new.yml'
-//      }
+//      steps {
+//           sh 'sudo scp -i demo.pem -o "StrictHostKeyChecking=no" webapp/target/webapp.war ubuntu@65.0.3.198:/opt/tomcat/webapps'
+//            sh 'sudo ansible-playbook deploy-new.yml'
+//    }
 //    }
 //     stage('building docker image from docker file by tagging') {
 //       steps {
@@ -55,11 +55,11 @@ pipeline {
 //       }   
 //     }  
 }
-// post {
-//      always {
-//        emailext to: 'nammimahesh01@gmail.com',
-//        attachLog: true, body: "Dear team pipeline is ${currentBuild.result} please check ${BUILD_URL} or PFA build log", compressLog: false,
-//        subject: "Jenkins Build Notification: ${JOB_NAME}-Build# ${BUILD_NUMBER} ${currentBuild.result}"
-//     }
-// }
+//post {
+//     always {
+//       emailext to: 'lakshmiphanindrarudra@gmail.com',
+//       attachLog: true, body: "Dear team pipeline is ${currentBuild.result} please check ${BUILD_URL} or PFA build log", compressLog: false,
+//       subject: "Jenkins Build Notification: ${JOB_NAME}-Build# ${BUILD_NUMBER} ${currentBuild.result}"
+//    }
+//}
 }
