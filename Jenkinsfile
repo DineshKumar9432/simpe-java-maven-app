@@ -3,7 +3,7 @@ pipeline {
   tools {
     maven 'maven'
   }
-  stages {
+//  stages {
 //    stage ('Initialize') {
 //             steps {
 //                 sh '''
@@ -30,7 +30,7 @@ pipeline {
     
     stage('Deploy to tomcat') {
       steps {
-           sh 'sudo scp -i demo.pem -o "StrictHostKeyChecking=no" webapp/target/webapp.war ubuntu@3.110.204.42:/opt/tomcat/webapps'
+           sh 'sudo scp -i demo.pem -o "StrictHostKeyChecking=no" webapp/target/webapp.war ubuntu@15.206.88.113:/opt/tomcat/webapps'
 //            sh 'sudo ansible-playbook deploy-new.yml'
     }
     }
@@ -62,4 +62,3 @@ pipeline {
 //       subject: "Jenkins Build Notification: ${JOB_NAME}-Build# ${BUILD_NUMBER} ${currentBuild.result}"
 //    }
 //}
-}
