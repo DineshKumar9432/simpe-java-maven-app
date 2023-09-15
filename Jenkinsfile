@@ -3,7 +3,7 @@ pipeline {
   tools {
     maven 'maven'
   }
-//  stages {
+  stages {
 //    stage ('Initialize') {
 //             steps {
 //                 sh '''
@@ -55,10 +55,11 @@ pipeline {
 //       }   
 //     }  
 }
-//post {
-//     always {
-//       emailext to: 'lakshmiphanindrarudra@gmail.com',
-//       attachLog: true, body: "Dear team pipeline is ${currentBuild.result} please check ${BUILD_URL} or PFA build log", compressLog: false,
-//       subject: "Jenkins Build Notification: ${JOB_NAME}-Build# ${BUILD_NUMBER} ${currentBuild.result}"
-//    }
-//}
+post {
+     always {
+       emailext to: 'dinesh526k@gmail.com',
+       attachLog: true, body: "Dear team pipeline is ${currentBuild.result} please check ${BUILD_URL} or PFA build log", compressLog: false,
+       subject: "Jenkins Build Notification: ${JOB_NAME}-Build# ${BUILD_NUMBER} ${currentBuild.result}"
+    }
+}
+}
